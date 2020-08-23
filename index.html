@@ -5,29 +5,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code Quiz</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/NYCS-bull-trans-Q.svg/1024px-NYCS-bull-trans-Q.svg.png">
 </head>
 
 <body>
     <!-- header that contains highscore and timer -->
-    <header>
-        <span id="highscore-views">
-            View Highscores
-        </span>
+    <div class="container">
+        <div class="row">
+            <div class="card col-lg-12 text-center bg-transparent">
+                <div class="card-header">
+                    <h1>Code Quiz Challenge</h1>
+                    <p class="card-text">Answer quiz questions within the time frame.</p>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                <div class="card-footer text-muted">
+                    <h5></h5>
+                </div>
+            </div>
+
+    <!-- <header class="page-header col-lg-12 text-center">
+        <br></br>
+        <h1>Code Quiz Challenge</h1>
+        <p> Answer quiz questions within the time frame.</p>
+    </header> -->
+
+    <!-- <span class="highscore-views col-lg-12 text-center">
+        View Highscores
+        
         <div id="timer-view">Time: <span id="secs">30</span></div>
-    </header>
+    </span> -->
+    
+   
     <!-- main content -->
-    <main id="main-content">
-        <h1>Coding Quiz Challenge</h1>
-        <p>
-            Answer code-related questions within the time frame.
-        </p>
+    <!-- <main class="main-content col-lg-12 text-center">
         <button id="start-quiz">Start Quiz</button>
         <ul id="choices-list"></ul>
         <div id="indicator"></div>
-    </main>
+    </main> -->
     <!-- script tag -->
     <script src="script.js"></script>
+    
+    </div>
+    </div>
 </body>
 
 </html>

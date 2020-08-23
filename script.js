@@ -5,36 +5,34 @@ var questions = [
         answer: 2,
     },
     {
-        question: "Where is the correct place to insert a JavaScript?",
+        question: "How do you add an Event Listener?",
         choices: [
-            "A. The <head> section",
-            "B. The <body> section",
+            "A. input.addEventListener('click', function(event) {
+//   alert('I was clicked!');
+            });",
+            "B. Beem me up scotty!",
             "C. Both are correct",
         ],
-        answer: 1,
+        answer: 0,
     },
     {
         question:
-            "What is the correct syntax for referring to an external script called 'xxx.js'?",
+            "Which of the following is an incorrect way of defining a variable?",
         choices: [
-            "A. <script href='xx.js'>",
-            "B. <script name='xx.js'>",
-            "C. <script src='xx.js'>",
+            "A. const x = A",
+            "B. B = bob",
+            "C. var d = C",
         ],
-        answer: 2,
-    },
-    {
-        question: "Which class provides a responsive fixed width container?",
-        choices: ["A. .container-fluid", "B. .container-fixed", "C. .container"],
         answer: 1,
     },
+  
     {
-        question: "What does HTML stand for?",
+    question: "Which is a querySelector Method?",
         choices: [
-            "A. Hyper Text Markup Language",
-            "B. Hyperlinks and Text Markup Language",
-            "C. Home Tool Markup Language",
+            "A. “Kick his ass, Sea Bass.",
+            "B. language.querySelector()",
+            "C. document.querySelector()",
         ],
-        answer: 0,
+        answer: 2,
     },
 ];

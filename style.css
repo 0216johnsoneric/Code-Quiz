@@ -18,8 +18,12 @@ body {
 
 div.card {
   padding: 75px;
-  /* position: relative; */
+  position: relative;
   color: lightskyblue;
+}
+
+.hide {
+  display: none;
 }
 
 span.highscore-views {
@@ -33,15 +37,9 @@ ul {
   margin: 50px;
 }
 
-button {
-  padding: 5px;
-  border-radius: 4px;
-  font-size: 15px;
-  background-color: purple;
-  color: white;
-}
 
-ul {
+
+/* ul {
   list-style: none;
 }
 
@@ -50,9 +48,9 @@ li {
   margin: 10px;
   font-size: 23px;
   background-color: rebeccapurple;
-}
+} */
 
-#highscore-views {
+/* #highscore-views {
   float: left;
 }
 
@@ -63,14 +61,11 @@ li {
 #indicator {
   font-style: italic;
   font-size: 25px;
-}
+} */
 
-.highscore-element {
+/* .highscore-element {
   font-size: 18px;
   text-align: left;
   color: white;
-  padding: 10px;
-  margin: 10px;
-  padding-left: 30px;
-  background-color: rebeccapurple;
-}
+ 
+} */

@@ -5,17 +5,29 @@ const startText = document.getElementById("card-text");
 const questionList = document.getElementById("question-container")
 const questionElement = document.getElementById("question")
 const answerButtons = document.getElementById('answer-buttons')
-
+var secondsElement = document.getElementById("seconds")
+var messageElement = document.querySelector("h2");
+var choicesList = document.getElementById("choices");
+var formButton = document.createElement("button");
+var formElement = document.createElement("div");
+var mainElement = document.getElementById("main-content");
 
 // var choicesList = document.querySelector("ul#choices");
 // var indicator = document.querySelector("div#indicator");
 // var timer = document.querySelector("div#timer");
-// var secondsLeft;
+var highscore = {
+    initials: "",
+    score: 0,
+};
+var highscores = [];
+var secondsLeft;
+var timerInterval;
+var secondsLeft;
 
 var questions = [
     {
         question: "What is the DOM?",
-        answers: ["A. <Javascript>", "B. A mafia boss", "C. Document Object Model"],
+        choices: ["A. <Javascript>", "B. A mafia boss", "C. Document Object Model"],
         answer: 2,
     },
     {
@@ -62,12 +74,36 @@ function startGame() {
     startText.remove();
     nextButton.classList.remove("hide");
     questionList.classList.remove("hide");
-    shuffledQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
-    // nextQuestion();
+    timerInterval = setInterval(function () {
+        secondsLeft--;
+        secondsElement.textContent = secondsLeft;
+
+        if (secondsLeft <= 0) {
+            clearInterval(timerInterval);
+        }
+    }, 1000);
+
+    renderQuestions();
 }
 
+function renderQuestions(questionNumber) {
+    questionNumber = questionNumber || 0;
+    var questionItem = questions[questionNumber];
+    messageElement.textContent = questionItem.question;
 
+    var newChoices = document.createElement("div");
+    choicesList.appendChild(newChoices);
+
+    for (var i = 0; i < questionItem.choices.length; i++) {
+        var choice = questionItem.choices[i];
+
+        var li = document.createElement("li");
+        li.setAttribute("data-index", i);
+        li.textContent = choice;
+        newChoices.appendChild(li);
+    }
+    
+}
 
 
 startButton.addEventListener("click", startGame);

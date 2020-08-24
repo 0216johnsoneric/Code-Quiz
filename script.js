@@ -91,7 +91,7 @@ function nextQuestions(questionNumber) {
     var questionItem = questions[questionNumber];
     messageElement.textContent = questionItem.question;
 
-    var newChoices = document.createElement("button");
+    var newChoices = document.createElements("button");
     choicesList.appendChild(newChoices);
 
     for (var i = 0; i < questionItem.choices.length; i++) {

@@ -83,21 +83,21 @@ function startGame() {
         }
     }, 1000);
 
-    nextQuestions();
+    newQuestions();
 }
 
-function nextQuestions(questionNumber) {
+function newQuestions(questionNumber) {
     questionNumber = questionNumber || 0;
     var questionItem = questions[questionNumber];
     messageElement.textContent = questionItem.question;
 
-    var newChoices = document.createElement("div");
+    var newChoices = document.createElement("li");
     choicesList.appendChild(newChoices);
 
     for (var i = 0; i < questionItem.choices.length; i++) {
         var choice = questionItem.choices[i];
 
-        var li = document.createElement("li");
+        var li = document.createElement("button");
         li.setAttribute("data-index", i);
         li.textContent = choice;
         newChoices.appendChild(li);

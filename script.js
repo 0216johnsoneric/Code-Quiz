@@ -83,10 +83,10 @@ function startGame() {
         }
     }, 1000);
 
-    renderQuestions();
+    nextQuestions();
 }
 
-function renderQuestions(questionNumber) {
+function nextQuestions(questionNumber) {
     questionNumber = questionNumber || 0;
     var questionItem = questions[questionNumber];
     messageElement.textContent = questionItem.question;

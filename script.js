@@ -91,7 +91,11 @@ function newQuestions(questionNumber) {
     var questionItem = questions[questionNumber];
     messageElement.textContent = questionItem.question;
 
+<<<<<<< HEAD
     var newChoices = document.createElement("li");
+=======
+    var newChoices = document.createElements("button");
+>>>>>>> a12d6748ce1229aa0fef5b8990c9f50350569c7a
     choicesList.appendChild(newChoices);
 
     for (var i = 0; i < questionItem.choices.length; i++) {

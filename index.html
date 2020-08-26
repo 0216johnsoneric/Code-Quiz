@@ -11,74 +11,153 @@
 </head>
 
 <body>
+
+ <!-- Nav Bar For Scores and Timer -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+        <div class="container navbar-container">
+            <div class="row w-100">
+                <div class="col-4 col-md-2">
+                    <button type="button" id="highscore-button" class="btn btn-info">View Scores</button>
+                </div>
+                    <div class="col-3 col-md-7"></div>
+                <div class="col-5 col-md-3">
+                <form>
+                    <div class="form-group row">
+                        <label for="time-remaining" class="col-sm-7 col-form-label"></label>
+                        <div id="timer">Time Remaining: <span id="time-remaining">60</span></div>
+                            <!-- <div class="col-sm-5"> -->
+                                <!-- <input type="number" readonly class="form-control" id="time-remaining" placeholder="60">
+                            <!-- </div> -->
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </nav>
     
-    <div class="container">
-        <div class="row">
+    
+    <!-- Header Tag/Text  -->
+    <header id="header-container" class="container">
+        <div class="row mb-3">
             <div class="card col-lg-12 text-center bg-transparent">
                 <div class="card-header">
                     <h1>Code Quiz Challenge</h1>
                     <p id="card-text">Answer quiz questions within the time frame.</p>
                 </div>
+             </div>   
+        </div>   
+    </header>
+    
+    
+    <!-- Main Questions Container -->
+    <main class="card-body text-center" id="quiz-container">
+        <div id="question-container" class="hide">
+            <div id="question"><h2>Questions</h2></div>
+            <br></br>
+            <!-- <div id="answer-buttons" class="btn-grid">
+                <button class="btn btn-lg btn-outline-primary" id="">Answer 1</button>
+                <button class="btn btn-lg btn-outline-primary" id="">Answer 2</button>
+                <button class="btn btn-lg btn-outline-primary" id="">Answer 3</button>
+            </div>  -->
+            <ul id="choices" class="btn btn-lg btn-outline-primary"></ul>
+            <div id="indicator"></div>
+        </div>
+    </main>
+       
+    
+    <!-- Footer Start / Next Buttons -->
+    <footer class="card-footer text-center">
+        <div class="controls">
+            <button id="start" class="start-btn btn-lg btn-primary">START QUIZ</button>
+            <button id="next" class="hide next-btn btn-lg btn-primary">NEXT QUESTION</button>
+        </div>
+    </footer>
+    
+    <div id="final-container" class="container d-none">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <form>
+                        <div class="form-group row">
+                            <label for="final-score" class="col-sm-7 col-form-label">Final Score</label>
+                            <div class="col-sm-5">
+                                <input type="number" readonly class="form-control" id="final-score" placeholder="0">
+                            </div>
+                        </div>
+                    </form>
+                    <form>
+                        <div class="form-group">
+                            <label for="initials-entry">Initials</label>
+                            <input type="text" class="form-control" id="initials-entry" placeholder="Enter initials">
+                        </div>
+                        <button id="submit-initials" type="button" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <div id="highscore-container" class="container d-none">
+            <div class="row">
+                <div class="col-2"></div>
+                <div id="highscore-table" class="col-8">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h2>High Scores</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
 
 
-                <div class="card-body">
+
+
+                <!-- <div class="card-body">
                     <span class="highscore-views col-lg-6 text-center">Scores:</span>
                     <div id="timer">Time: <span id="seconds">60</span></div>
-                    </span>
+                    </span> -->
                 
-                    <main class="main-content">
+                    <!-- <main class="main-content">
                         <div id="question-container" class="hide">
                             <div id="question"><h2>Questions</h2></div>
                             <br></br>
-                            <!-- <div id="answer-buttons" class="btn-grid">
-                                <button class="btn btn-lg btn-outline-primary">Answer 1</button>
-                                <button class="btn btn-lg btn-outline-primary">Answer 2</button>
-                                <button class="btn btn-lg btn-outline-primary">Answer 3</button>
-                                <button class="btn btn-lg btn-outline-primary">Answer 4</button>
+                            <div id="answer-buttons" class="btn-grid">
+                                <button class="btn btn-lg btn-outline-primary" id="">Answer 1</button>
+                                <button class="btn btn-lg btn-outline-primary" id="">Answer 2</button>
+                                <button class="btn btn-lg btn-outline-primary" id="">Answer 3</button>
                             </div> -->
-                            <ul id="choices" class="btn btn-lg"></ul>
-                            <div id="indicator"></div>
-                        </div>
+                            <!-- <ul id="choices" class="btn btn-lg"></ul>
+                            <div id="indicator"></div> -->
+                        <!-- </div>
                         <br></br>
                         <div class="controls">
                             <button id="start" class="start-btn btn-lg btn-primary">START QUIZ</button>
                             <button id="next" class="hide next-btn btn-lg btn-primary">NEXT QUESTION</button>
                         </div>
-                    </main>
+                    </main> -->
 
                     <!-- <main class="main-content"> 
                     <button class="btn btn-primary" id="start">START QUIZ</button> 
                     <ul id="choices"></ul>
                     <div id="indicator"></div>
                     </main> -->
-                </div>
+                <!-- </div>
 
                 <div class="card-footer text-muted">
-                    <h5></h5>
+                    <h5>AASDFGF</h5>
                 </div>
-            </div>
+            </div> -->
 
-    <!-- header that contains highscore and timer -->
-    <!-- <!-- <header class="page-header col-lg-12 text-center">
-        <br></br>
-        <h1>Code Quiz Challenge</h1>
-        <p> Answer quiz questions within the time frame.</p>
-    </header> -->
+    
 
     <!-- <span class="highscore-views col-lg-12 text-center">
         View Highscores
         
         <div id="timer">Time: <span id="seconds">30</span></div>
-    </span> --> -->
+    </span> --> 
     
    
-    <!-- main content -->
-    <!-- <main class="main-content c<!-- ol-lg-12 text-center">
-        <button id="start">START</button>
-        <ul id="choices"></ul>
-        <div id="indicator"></div>
-    </main> --> -->
-    <!-- script tag -->
+    
     <script src="script.js"> </script>
     
     </div>

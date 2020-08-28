@@ -1,21 +1,21 @@
-var timerElement = document.getElementById("time-remaining");
-var timerView = document.getElementById("timer");
-var highScoreView = document.querySelector("#highscores");
-var startButton = document.getElementById("start-quiz");
+const timerElement = document.getElementById("time-remaining");
+const timerView = document.getElementById("timer");
+const highScoreView = document.querySelector("#highscores");
+const startButton = document.getElementById("start-quiz");
 
-var mainElement = document.querySelector("#main-content");
-var messageElement = document.querySelector("h1");
-var textElement = document.querySelector("p");
+const mainElement = document.querySelector("#main-content");
+const messageElement = document.querySelector("h1");
+const textElement = document.querySelector("p");
 
-var choicesListElement = document.getElementById("choices-list");
-var indicatorElement = document.getElementById("indicator");
+const choicesListElement = document.getElementById("choices-list");
+const indicatorElement = document.getElementById("indicator");
 
-var formElement = document.createElement("div");
-var highscoresElement = document.createElement("div");
-var textInputElement = document.createElement("input");
-var formButton = document.createElement("button");
-var backButton = document.createElement("button");
-var clearButton = document.createElement("button");
+const formElement = document.createElement("div");
+const highscoresElement = document.createElement("div");
+const textInputElement = document.createElement("input");
+const formButton = document.createElement("button");
+const backButton = document.createElement("button");
+const clearButton = document.createElement("button");
 
 
 var highscore = {

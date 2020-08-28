@@ -1,10 +1,13 @@
 # Code-Quiz
 
 Hello Welcome to Code Quiz! Try to beat the clock and compete against friend for the highscore and the chance to be the master of the Quiz!
+
 1)Start Quiz Button initaializes game and starts clock count down
+
 2)Pick the best Question in the Iterated Question Loop
 -Score 10 points for every correct answer
 -Lose 10 seconds for every wrong answer
+
 3)Compete against your friends for a high-score using local storage on the Leaderboard
 
 Github Pages: https://0216johnsoneric.github.io/Code-Quiz/

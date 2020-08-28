@@ -1,4 +1,5 @@
 # Code-Quiz
+
 Hello Welcome to Code Quiz! Try to beat the clock and compete against friend for the highscore and the chance to be the master of the Quiz!
 1)Start Quiz Button initaializes game and starts clock count down
 2)Pick the best Question in the Iterated Question Loop

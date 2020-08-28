@@ -1,20 +1,23 @@
-const startButton = document.getElementById("start");
-const nextButton = document.getElementById("next")
-const startText = document.getElementById("card-text");
-const questionList = document.getElementById("question-container")
-const questionElement = document.getElementById("question")
-const answerButtons = document.getElementById('answer-buttons')
-var secondsElement = document.getElementById("time-remaining")
-var messageElement = document.querySelector("h2");
-var choicesList = document.getElementById("choices");
-var formButton = document.createElement("button");
-var formElement = document.createElement("div");
-var mainElement = document.getElementById("main-content");
+var timerElement = document.getElementById("time-remaining");
+var timerView = document.getElementById("timer");
+var highScoreView = document.querySelector("#highscores");
+var startButton = document.getElementById("start-quiz");
+
+var mainElement = document.querySelector("#main-content");
+var messageElement = document.querySelector("h1");
+var textElement = document.querySelector("p");
+
+var choicesListElement = document.getElementById("choices-list");
 var indicatorElement = document.getElementById("indicator");
 
-// var choicesList = document.querySelector("ul#choices");
-// var indicator = document.querySelector("div#indicator");
-// var timer = document.querySelector("div#timer");
+var formElement = document.createElement("div");
+var highscoresElement = document.createElement("div");
+var textInputElement = document.createElement("input");
+var formButton = document.createElement("button");
+var backButton = document.createElement("button");
+var clearButton = document.createElement("button");
+
+
 var highscore = {
     initials: "",
     score: 0,
@@ -22,7 +25,6 @@ var highscore = {
 var highscores = [];
 var secondsLeft;
 var timerInterval;
-var secondsLeft;
 
 var questions = [
     {
@@ -30,6 +32,7 @@ var questions = [
         choices: ["A. <Javascript>", "B. A mafia boss", "C. Document Object Model"],
         answer: 2,
     },
+
     {
         question: "How do you add an Event Listener?",
         choices: [
@@ -39,6 +42,7 @@ var questions = [
         ],
         answer: 0,
     },
+
     {
         question:
             "Which of the following is an incorrect way of defining a variable?",
@@ -49,18 +53,28 @@ var questions = [
         ],
         answer: 1,
     },
-  
     {
-    question: "Which is a querySelector Method?",
+        question: "Which is a querySelector Method?",
         choices: [
-            "A. “Hello_world",
+            "A. document.querySelector()",
             "B. language.querySelector()",
-            "C. document.querySelector()",
+            "C. Hello World",
+        ],
+        answer: 0,
+    },
+    {
+        question: "What is Scope in Programming?",
+        choices: [
+            "A. Hyper Text Markup Language",
+            "B. A Mouth Wash",
+            "C. Refers to where values and functions can be accessed.",
         ],
         answer: 2,
     },
 ];
 
+
+// FUNCTIONS
 init();
 
 function init() {
@@ -69,31 +83,27 @@ function init() {
 }
 
 function startGame() {
-    console.log("STARTED")
     startButton.remove();
-    startText.remove();
-    nextButton.classList.remove("hide");
-    questionList.classList.remove("hide");
+    textElement.remove();
     timerInterval = setInterval(function () {
         secondsLeft--;
-        secondsElement.textContent = secondsLeft;
+        timerElement.textContent = secondsLeft;
 
         if (secondsLeft <= 0) {
             clearInterval(timerInterval);
         }
     }, 1000);
 
-    newQuestions();
+    renderQuiz();
 }
 
-function newQuestions(questionNumber) {
+function renderQuiz(questionNumber) {
     questionNumber = questionNumber || 0;
     var questionItem = questions[questionNumber];
     messageElement.textContent = questionItem.question;
 
     var newChoices = document.createElement("div");
-    // var newChoices = document.createElements("button");
-    choicesList.appendChild(newChoices);
+    choicesListElement.appendChild(newChoices);
 
     for (var i = 0; i < questionItem.choices.length; i++) {
         var choice = questionItem.choices[i];
@@ -109,11 +119,11 @@ function newQuestions(questionNumber) {
                 parseInt(event.target.getAttribute("data-index"))
             ) {
                 score += 10;
-                indicatorElement.innerHTML = "<hr> Correct!";
-                indicatorElement.setAttribute("style", "color: brightgreen");
+                indicatorElement.innerHTML = "<hr> CORRECT!";
+                indicatorElement.setAttribute("style", "color: lightgreen");
             } else {
                 secondsLeft -= 10;
-                indicatorElement.innerHTML = "<hr> Try Again!";
+                indicatorElement.innerHTML = "<hr> WRONG!";
                 indicatorElement.setAttribute("style", "color: red");
             }
 
@@ -123,14 +133,14 @@ function newQuestions(questionNumber) {
                 clearInterval(timerInterval);
                 indicatorElement.textContent = "";
                 newChoices.remove();
-                messageElement.textContent = "Thanks for playing!";
-                messageElement.appendChild(startText);
-                startText.textContent = "Your final score is: " + score;
+                messageElement.textContent = "Game Over!";
+                messageElement.appendChild(textElement);
+                textElement.textContent = "Your final score is: " + score;
 
                 renderForm();
             } else {
                 setTimeout(function () {
-                    newQuestions(questionNumber);
+                    renderQuiz(questionNumber);
                     newChoices.remove();
                     indicatorElement.textContent = "";
                 }, 1000);
@@ -139,7 +149,60 @@ function newQuestions(questionNumber) {
     }
 }
 
+function renderForm() {
+    formElement.textContent = "ENTER NAME: ";
+    formElement.setAttribute("style", "color: white");
+    formButton.textContent = "SUBMIT";
+    mainElement.appendChild(formElement);
+    formElement.appendChild(textInputElement);
+    formElement.appendChild(formButton);
+}
 
+function submitHighscore() {
+    var initialInput = document.querySelector("input").value;
+    highscore.initials = initialInput;
+    highscore.score = score;
+    console.log(highscore);
+    localStorage.setItem("highscore", JSON.stringify(highscore));
+    mainElement.innerHTML = "";
+    highScoreView.textContent = "";
+    timerView.textContent = "";
+
+    renderHighscores();
+}
+
+function renderHighscores() {
+    var storedHighscore = JSON.parse(localStorage.getItem("highscore"));
+    console.log(storedHighscore);
+    messageElement.innerHTML = "Highscores";
+    messageElement.setAttribute("style", "color: white");
+    mainElement.appendChild(messageElement);
+    console.log(storedHighscore.initials);
+    console.log(storedHighscore.score);
+    highscoresElement.setAttribute("class", "highscore-element");
+    highscoresElement.textContent = `${storedHighscore.initials} - ${storedHighscore.score}`;
+    messageElement.appendChild(highscoresElement);
+    backButton.textContent = "Back";
+    clearButton.textContent = "Clear";
+    mainElement.appendChild(backButton);
+    mainElement.appendChild(clearButton);
+}
+
+function clear() {
+    highscoresElement.remove();
+}
+
+function back() {
+    location.reload();
+}
+
+highScoreView.addEventListener("click", function () {
+    textElement.remove();
+    startButton.remove();
+    renderHighscores();
+});
 
 startButton.addEventListener("click", startGame);
-nextButton.addEventListener("click", newQuestions);
+formButton.addEventListener("click", submitHighscore);
+backButton.addEventListener("click", back);
+clearButton.addEventListener("click", clear);

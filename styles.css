@@ -1,19 +1,23 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0 auto;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-image: url(https://mybayutcdn.bayut.com/mybayut/wp-content/uploads/Quiz-Nights-in-Dubai_Cover-3-Jul-2019.jpg);
-    background-size: cover;
+  margin: 0 auto;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url(https://mybayutcdn.bayut.com/mybayut/wp-content/uploads/Quiz-Nights-in-Dubai_Cover-3-Jul-2019.jpg);
+  background-size: cover;
 }
 
+header {
+  padding: 20px;
+  position: relative;
+}
 
 div.card {
   padding: 70px;
@@ -21,49 +25,40 @@ div.card {
   color: lightskyblue;
 }
 
-div.questions {
-  color: lightskyblue;
+ul {
+  margin: 100px;
 }
 
-.hide {
-  display: none;
-}
-
-span.highscore-views {
-  float: left;
-  color: lightskyblue;
+button {
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: white;
+  background-color: lightsteelblue;
 }
 
 ul {
-  margin: 50px;
+  list-style: none;
 }
 
 li {
   padding: 10px;
   margin: 10px;
-  font-size: 25px;
-  background-color: hotpink;
-} 
+  font-size: 23px;
+  background-color: rebeccapurple;
+}
 
 #indicator {
   font-style: italic;
-  font-size: 50px;
+  font-size: 60px;
 }
 
-
-/* #highscore-views {
-  float: left;
-}
-
-
-#indicator {
-  font-style: italic;
-  font-size: 25px;
-}
-
-/* .highscore-element {
+.highscore-element {
   font-size: 18px;
   text-align: left;
   color: white;
- 
-} */
+  padding: 10px;
+  margin: 10px;
+  padding-left: 30px;
+  background-color: rebeccapurple;
+}

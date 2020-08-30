@@ -182,7 +182,7 @@ function renderHighscores() {
     highscoresElement.setAttribute("class", "highscore-element");
     highscoresElement.textContent = `${storedHighscore.initials} - ${storedHighscore.score}`;
     messageElement.appendChild(highscoresElement);
-    backButton.textContent = "Back";
+    backButton.textContent = "Home";
     clearButton.textContent = "Clear";
     mainElement.appendChild(backButton);
     mainElement.appendChild(clearButton);
@@ -192,7 +192,7 @@ function clear() {
     highscoresElement.remove();
 }
 
-function back() {
+function home() {
     location.reload();
 }
 
@@ -204,5 +204,5 @@ highScoreView.addEventListener("click", function () {
 
 startButton.addEventListener("click", startGame);
 formButton.addEventListener("click", submitHighscore);
-backButton.addEventListener("click", back);
+backButton.addEventListener("click", home);
 clearButton.addEventListener("click", clear);
